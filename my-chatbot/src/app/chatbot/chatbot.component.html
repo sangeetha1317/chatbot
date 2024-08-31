@@ -1,0 +1,19 @@
+
+    <div class="chatBot">
+        <header>
+            <h2>ChatBot</h2>
+            <span alt="Close"
+                  id="cross"></span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat-incoming chat"  *ngFor="let message of chatMessages" [ngClass]="messgae.role">
+                <p>{{ message.content }}</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea rows="0" cols="17"
+            [(ngModel)]="userMessage"
+                      placeholder="Enter a message..."></textarea>
+            <button id="sendBTN" (click)="sendMessage()">Send</button>
+        </div>
+    </div>
